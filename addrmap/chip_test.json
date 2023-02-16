@@ -9,76 +9,80 @@
     "system" : {
       "protocol" : "none",
       "input" : {
-        "reset_n" : 1,
-        "reset_n_pad" : 1,
-        "test_mode" : 1,
-        "clk_sys_1ms_tick" : 1,
-        "clk_sys_xtal3_tick" : 1,
+        "oscin_alwayson" : 1,
+        "reset_n_i_from_pad" : 1,
+        "pwd_detecting" : 1,
         "B" : 1
       },
       "output" : {
-        "forc_testn_asin" : 1,
-        "gpio_msr"  : 1,
-        "gpio_irq"  : 4
+        "cts_scan_clk" : 1,
+        "tmode_scan"  : 1
       }
     },
     "prod" : {
       "protocol" : "none",
       "input" : {
+        "prod_tmode" : 1,
+        "prod_mode_sel_sample_en" : 1,
+        "prod_mode_sel" : 4,
+        "frpad_prod_i" : 8
+      },
+      "output" : {
         "topad_prod_o" : 8,
         "topad_prod_oen" : 8,
         "topad_prod_mask" : 8
       }
     },
-    "apb" : {
-      "protocol": "apb",
-      "input": {
-        "PCLK": 1,
-        "PADDR": 32,
-        "PWRITE": 1,
-        "PENABLE": 1,
-        "PWDATA": 32,
-        "PPROT": 3,
-        "PSEL": 1
-      },
-      "output": {
-        "PRDATA": 32,
-        "PREADY": 1,
-        "PSLVERR": 1
-      }
-    }
-    "gpio" : {
-      "protocol" : "gpio",
+    "poc" : {
+      "protocol" : "none",
       "input" : {
-        "gpio_i" : 8
+        "poc_sig_i" : 8
       },
       "output" : {
-        "gpio_ds" : 16,
-        "gpio_i_tm" : 8,
-        "gpio_o" : 8,
-        "gpio_oen" : 8,
-        "gpio_pull_en" : 8,
-        "gpio_pull_up" : 8
+        "poc_sig_store" : 8,
+        "poc_vld" : 1,
+        "poc_pins_are_input" : 1
+      }
+    },
+    "tmode" : {
+      "protocol": "none",
+      "output" :{
+        "tmode_normal": 1
+      }
+    },
+    "tmode_hiz" : {
+      "protocol": "none",
+      "output": {
+        "tmode_hiz": 1
+      }
+    },
+    "tmode_bist" : {
+      "protocol": "none",
+      "input": {
+        "tmode_mbist_btc_do": 8
       },
-      "testn": {
-        "protocol" : "none",
-        "input" : {
-          "testn_i" : 1
-        },
-        "output" : {
-          "testn_ds" : 2,
-          "testn_i_tm" : 1,
-          "testn_o" : 1,
-          "testn_oen" : 1,
-          "testn_pull_en" : 1,
-          "testn_pull_up" : 1
-        }
+      "output": {
+        "tmode_mbist": 1,
+        "tmode_mbist_clk": 1,
+        "tmode_mbist_btc_clk": 1,
+        "tmode_mbist_btc_mode": 1,
+        "tmode_mbist_btc_di": 8
+      }
+    },
+    "tmode_scan" : {
+      "protocol": "none",
+      "input": {
+        "tmode_scan_core_o": 8,
+        "tmode_scan_spc_out": 1
       },
-      "spi" : {
-        "protocol" : "none",
-        "input" : {
-
-        }
+      "output": {
+        "tmode_scan_core": 1,
+        "tmode_scan_core_reset_n": 1,
+        "tmode_scan_core_se": 1,
+        "tmode_scan_core_cmp": 1,
+        "tmode_scan_spc_disable": 1,
+        "tmode_scan_spc_in": 1,
+        "tmode_scan_core_i": 8
       }
     }
   }
