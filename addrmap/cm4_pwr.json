@@ -1,0 +1,21 @@
+{
+  "system" : "hercules",
+  "super"  : "m4_pwr.json",
+  "current": "cm4_pwr.json",
+  "child"  : {},
+  "parameter" : {
+    "NUM_IRQ         " :  "128        ",
+    "LVL_WIDTH       " :  "32      ",
+    "MPU_PRESENT     " :  "1    ",
+    "FPU_PRESENT     " :  "1    ",
+    "BB_PRESENT      " :  "1     ",
+    "CONST_AHB_CTRL  " :  "32 ",
+    "DEBUG_LVL       " :  "1      ",
+    "TRACE_LVL       " :  "1      ",
+    "RESET_ALL_REGS  " :  "1 ",
+    "CLKGATE_PRESENT " :  "1",
+    "WIC_PRESENT     " :  "1    ",
+    "WIC_LINES       " :  "1      "
+  }
+  "interface" : "intf/cm4_pwr.json"
+}

@@ -1,0 +1,148 @@
+{
+  "system" : "hercules",
+  "super"  : "chip_core.json",
+  "current": "m4_pwr.json",
+  "child"  : {
+    "scanmux" : {
+      "inst_name" : "u_m4_clk_tm",
+      "connect" : {
+        "(Z)" : "m4_clk_tm",
+	"(A)" : "m4_clk",
+	"(B)" : "scan_clk"
+      }
+    },
+    "scanmux" : {
+      "inst_name" : "u_clk_32k_tm",
+      "connect" : {
+        "(Z)" : "clk_32k_tm",
+	"(A)" : "clk_32k",
+	"(B)" : "scan_clk"
+      }
+    },
+    "scanmux" : {
+      "inst_name" : "u_PCLK_tm",
+      "connect" : {
+        "(Z)" : "PCLK_tm",
+	"(A)" : "PCLK",
+	"(B)" : "scan_clk"
+      }
+    },
+    "scanmux" : {
+      "inst_name" : "u_sys_clk_tm",
+      "connect" : {
+        "(Z)" : "sys_clk_tm",
+	"(A)" : "sys_clk",
+	"(B)" : "scan_clk"
+      }
+    },
+    "scanmux" : {
+      "inst_name" : "u_m4_top_reset_n_tm",
+      "connect" : {
+        "(Z)" : "m4_top_reset_n_tm",
+	"(A)" : "m4_top_reset_n",
+	"(B)" : "scan_reset_n"
+      }
+    },
+    "scanmux" : {
+      "inst_name" : "u_m4_por_reset_n_tm",
+      "connect" : {
+        "(Z)" : "m4_por_reset_n_tm",
+	"(A)" : "m4_por_reset_n",
+	"(B)" : "scan_reset_n"
+      }
+    },
+    "scanmux" : {
+      "inst_name" : "u_m4_core_reset_n_tm",
+      "connect" : {
+        "(Z)" : "m4_core_reset_n_tm",
+	"(A)" : "m4_core_reset_n",
+	"(B)" : "scan_reset_n"
+      }
+    },
+    "scanmux" : {
+      "inst_name" : "u_PRESET_n_tm",
+      "connect" : {
+        "(Z)" : "PRESET_n_tm",
+	"(A)" : "PRESET_n",
+	"(B)" : "scan_reset_n"
+      }
+    },
+    "scanmux" : {
+      "inst_name" : "u_chip_reset_n_tm",
+      "connect" : {
+        "(Z)" : "chip_reset_n_tm",
+	"(A)" : "chip_reset_n",
+	"(B)" : "scan_reset_n"
+      }
+    },
+    "scanmux" : {
+      "inst_name" : "u_RESETn_TOP_FOC",
+      "connect" : {
+        "(Z)" : "RESETn_TOP_FOC",
+	"(A)" : "RESETn_TOP & foc_rstn",
+	"(B)" : "scan_reset_n"
+      }
+    },
+    "scanmux" : {
+      "inst_name" : "u_PORESETn_FOC",
+      "connect" : {
+        "(Z)" : "PORESETn_FOC",
+	"(A)" : "PORESETn & foc_rstn",
+	"(B)" : "scan_reset_n"
+      }
+    },
+    "scanmux" : {
+      "inst_name" : "u_SYSRESETn_FOC",
+      "connect" : {
+        "(Z)" : "SYSRESETn_FOC",
+	"(A)" : "SYSRESETn & foc_rstn",
+	"(B)" : "scan_reset_n"
+      }
+    },
+    "scanmux" : {
+      "inst_name" : "u_RESETn_CS_FOC",
+      "connect" : {
+        "(Z)" : "RESETn_CS_FOC",
+	"(A)" : "RESETn_CS & foc_rstn",
+	"(B)" : "scan_reset_n"
+      }
+    },
+    "pulse_sync" : {
+      "inst_name" : "u_pulse_timer_irq",
+      "connect" : {
+        "(clk_in)"   : "clk_32k_tm",
+	"(rstn_in)"  : "chip_reset_n_tm",
+	"(pulse_in)" : "timer_irq",
+	"(clk_out)"  : "sys_clk_tm",
+	"(rstn_out)" : "chip_reset_n_tm",
+	"(pulse_out)": "sys_clk_timer_irq"
+      }
+    },
+    "m4_clk_rst_tst" : {
+      "inst_name" : "u_m4_clk_rst"
+    },
+    "cm4_pwr" : {
+      "inst_name" : "u_cm4_pwr",
+      "parameter" : {
+        "NUM_IRQ         " :  "NUM_IRQ        ",
+        "LVL_WIDTH       " :  "LVL_WIDTH      ",
+        "MPU_PRESENT     " :  "MPU_PRESENT    ",
+        "FPU_PRESENT     " :  "FPU_PRESENT    ",
+        "BB_PRESENT      " :  "BB_PRESENT     ",
+        "CONST_AHB_CTRL  " :  "CONST_AHB_CTRL ",
+        "DEBUG_LVL       " :  "DEBUG_LVL      ",
+        "TRACE_LVL       " :  "TRACE_LVL      ",
+        "RESET_ALL_REGS  " :  "RESET_ALL_REGS ",
+        "CLKGATE_PRESENT " :  "CLKGATE_PRESENT",
+        "WIC_PRESENT     " :  "WIC_PRESENT    ",
+        "WIC_LINES       " :  "WIC_LINES      "
+      },
+      "connect" :{
+        "(\\W+)" : "m4_(1)"
+      }
+    }
+  },
+  "parameter" : {
+  },
+  "interface" : "intf/pwr_m4.json"
+}

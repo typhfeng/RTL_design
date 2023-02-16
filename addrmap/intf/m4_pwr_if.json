@@ -1,0 +1,188 @@
+{
+  "system": {
+    "protocol": "none",
+    "input": {
+      "test_mode": 1,
+      "mem_pd": 8,
+      "btc_clk": 1,
+      "btc_mode": 1,
+      "btc_di": 4,
+      "pwr_on": 1,
+      "iso_en": 1,
+      "foc_rstn": 1,
+      "scan_clk": 1,
+      "scan_reset_n": 1
+    },
+    "output": {
+      "btc_do": 4,
+      "pwr_ack": 1
+    }
+  },
+  "jtag_debug": {
+    "protocol": "none",
+    "input": {
+      "jtag_ree_in": 1,
+      "jtag_tee_in": 1
+    }
+  },
+  "clock_and_reset": {
+    "protocol": "",
+    "input": {
+      "cts_sys_clk": 1,
+      "clk_32k": 1,
+      "m4_clk": 1,
+      "DAPCLK": 1,
+      "chip_reset_n": 1,
+      "m4_top_reset_n": 1,
+      "m4_por_reset_n": 1,
+      "m4_core_reset_n": 1,
+      "m4_DAPRESETn": 1
+    }
+  },
+  "apb": {
+    "protocol": "apb",
+    "input": {
+      "PRESETn": 1,
+      "PCLK": 1,
+      "PADDR": 10,
+      "PWRITE": 1,
+      "PENABLE": 1,
+      "PWDATA": 32,
+      "PUSER": 1,
+      "PPROT": 3,
+      "PSEL": 1
+    },
+    "output": {
+      "PRDATA": 32,
+      "PREADY": 1,
+      "PSLVERR": 1
+    }
+  },
+  "dap": {
+    "protocol": "DAP",
+    "input": {
+      "m4_DAPSEL": 1,
+      "m4_DAPENABLE": 1,
+      "m4_DAPWRITE": 1,
+      "m4_DAPABORT": 1,
+      "m4_DAPADDR": 32,
+      "m4_DAPWDATA": 32
+    },
+    "output": {
+      "m4_DAPREADY": 1,
+      "m4_DAPSLVERR": 1,
+      "m4_DAPRDATA": 32
+    }
+  },
+  "ETM": {
+    "protocol": "ETM",
+    "input": {
+      "m4_ATREADY_ETM": 1
+    },
+    "output": {
+      "m4_ATID_ETM": 7,
+      "m4_ATDATA_ETM": 8,
+      "m4_ATVALID_ETM": 1,
+      "m4_AFREADY_ETM": 1
+    }
+  },
+  "ITM": {
+    "protocol": "ITM",
+    "input": {
+      "m4_ATREADY_ITM": 1
+    },
+    "output": {
+      "m4_ATID_ITM": 7,
+      "m4_ATDATA_ITM": 8,
+      "m4_ATVALID_ITM": 1,
+      "m4_AFREADY_ITM": 1
+    }
+  },
+  "timestamp": {
+    "protocol": "none",
+    "input": {
+      "m4_tsbitm": 1,
+      "m4_tssyncm": 1
+    },
+    "output": {
+      "m4_tssyncreadym": 1
+    }
+  },
+  "ahb_fr_sys": {
+    "protocol": "ahb",
+    "output": {
+      "sys_to_m4_HREADY": 1,
+      "sys_to_m4_HRDATA": 32,
+      "sys_to_m4_HRESP": 2
+    },
+    "input": {
+      "sys_to_m4_HADDR": 32,
+      "sys_to_m4_HTRANS": 2,
+      "sys_to_m4_HSIZE": 3,
+      "sys_to_m4_HBURST": 3,
+      "sys_to_m4_HPROT": 4,
+      "sys_to_m4_HWRITE": 1,
+      "sys_to_m4_HWDATA": 32
+    }
+  },
+  "ahb_to_sys": {
+    "protocol": "ahb",
+    "output": {
+      "m4_to_sys_HREADY": 1,
+      "m4_to_sys_HRDATA": 32,
+      "m4_to_sys_HRESP": 2
+    },
+    "input": {
+      "m4_to_sys_HADDR": 32,
+      "m4_to_sys_HTRANS": 2,
+      "m4_to_sys_HSIZE": 3,
+      "m4_to_sys_HBURST": 3,
+      "m4_to_sys_HPROT": 4,
+      "m4_to_sys_HWRITE": 1,
+      "m4_to_sys_HWDATA": 32
+    }
+  },
+  "CTI": {
+    "protocol": "none",
+    "input": {
+      "CTICHOUTACK": 4,
+      "CTICHIN": 4
+    },
+    "output": {
+      "CTICHOUT": 4,
+      "CTICHINACK": 4
+    }
+  },
+  "irq": {
+    "protocol": "none",
+    "input": {
+      "irq_src": 128
+    },
+    "output": {
+      "CTIIRQ": 1
+    }
+  },
+  "timer": {
+    "protocol": "none",
+    "input": {
+      "clk_sys_1us_tick": 1,
+      "clk_sys_10us_tick": 1,
+      "clk_sys_100us_tick": 1
+    },
+    "output": {
+      "itn_timerA_irq": 1,
+      "itn_timerB_irq": 1,
+      "aon_timerA_irq": 1,
+      "aon_timerB_irq": 1
+    }
+  },
+  "space": {
+    "protocol": "none",
+    "input": {
+      "m4_space_in": 16
+    },
+    "output": {
+      "m4_space_out": 16
+    }
+  }
+}

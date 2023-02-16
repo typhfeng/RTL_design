@@ -1,0 +1,7 @@
+{
+  "system" : "hercules",
+  "super"  : "m4_pwr.json",
+  "current": "scanmux.json",
+  "child"  : {}
+  
+
