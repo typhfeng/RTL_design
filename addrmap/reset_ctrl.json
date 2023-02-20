@@ -1,0 +1,51 @@
+{
+  "system" : "hercules",
+  "super"  : "chip_core.json",
+  "current": "reset_ctrl.json",
+  "child"  : "",
+    "parameter" : {
+  },
+  "interface" : {
+    "system" : {
+      "protocol" : "none",
+      "input" : {
+        "pad_reset_n_i" : 1,
+        "test_mode" : 1,
+        "scan_reset_n" : 1,
+        "cts_oscin_clk" : 1,
+        "cts_scan_clk" : 1,
+        "hold_cpu" : 1,
+        "i_irq_src" : 1,
+        "clk_sys_1us_tick" : 1,
+        "clk_sys_10us_tick" : 1,
+        "clk_sys_100us_tick" : 1,
+        "B" : 1
+      },
+      "output" : {
+        "pad_reset_n_o" : 1,
+      }
+    },
+    "REG_CTRL_STS" : {
+      "protocol" : "none",
+      "input" : {
+        "pwrctrl_on0" : 32,
+        "pwrctrl_iso_en_0" : 32,
+        "pwrctrl_focrst_0" : 32,
+        "pwrctrl_mempd_0" : 32
+      },
+      "output" : {
+        "pwrctrl_irq_sts" : 32,
+        "pwrctrl_pwr_ack" : 32
+      }
+    },
+    "pwr_ctrl" : {
+      "output" : {
+        "pwr_on0": 32,
+        "pwr_iso_en_0": 32,
+        "pwr_focrst_0": 32,
+        "pwr_mempd_0": 32
+      }
+    }
+  }
+}
+
