@@ -77,7 +77,12 @@
       "spi" : {
         "protocol" : "none",
         "input" : {
-
+          "spi_somi_o" : 1
+        },
+        "output" : {
+          "spi_csn_i" : 1,
+          "spi_clk_i" : 1,
+          "spi_mosi_i" : 1
         }
       }
     }
