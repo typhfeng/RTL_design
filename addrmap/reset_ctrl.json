@@ -11,14 +11,10 @@
       "input" : {
         "pad_reset_n_i" : 1,
         "test_mode" : 1,
+        "tmode_hiz" : 1,
         "scan_reset_n" : 1,
         "cts_oscin_clk" : 1,
         "cts_scan_clk" : 1,
-        "hold_cpu" : 1,
-        "i_irq_src" : 1,
-        "clk_sys_1us_tick" : 1,
-        "clk_sys_10us_tick" : 1,
-        "clk_sys_100us_tick" : 1,
         "B" : 1
       },
       "output" : {
@@ -38,12 +34,15 @@
         "pwrctrl_pwr_ack" : 32
       }
     },
-    "pwr_ctrl" : {
+    "reset_ctrl" : {
       "output" : {
-        "pwr_on0": 32,
-        "pwr_iso_en_0": 32,
-        "pwr_focrst_0": 32,
-        "pwr_mempd_0": 32
+        "reg_reset0_n": 32,
+        "reg_reset1_n": 32,
+        "reg_reset2_n": 32,
+        "watchdog_gpio": 1,
+        "watchdog_irq": 1,
+        "chip_reset_n" : 1,
+        "temp" : 1
       }
     }
   }

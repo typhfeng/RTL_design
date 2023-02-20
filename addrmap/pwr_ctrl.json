@@ -1,7 +1,7 @@
 {
   "system" : "hercules",
   "super"  : "chip_core.json",
-  "current": "pwr_ctrl.json",
+  "current": "reset_ctrl.json",
   "child"  : "",
     "parameter" : {
   },
